@@ -1,0 +1,81 @@
+﻿<body background="../../images/inser_supp_emp.png">
+
+    @model Nursery.Models.employee
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <font color="white">
+        <h2>Details</h2>
+        </font>
+
+        <div>
+            
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    <font color="white">   @Html.DisplayNameFor(model => model.EmployeeName) </font>
+                </dt>
+
+                <dd>
+                    <font color="white">  @Html.DisplayFor(model => model.EmployeeName) </font>
+                </dd>
+
+                <dt>
+                    <font color="white">   @Html.DisplayNameFor(model => model.EmployeeAddress) </font>
+                </dt>
+
+                <dd>
+                    <font color="white">  @Html.DisplayFor(model => model.EmployeeAddress) </font>
+                </dd>
+
+                <dt>
+                    <font color="white">   @Html.DisplayNameFor(model => model.EmployeePhone) </font>
+                </dt>
+
+                <dd>
+                    <font color="white">   @Html.DisplayFor(model => model.EmployeePhone) </font>
+                </dd>
+
+                <dt>
+                    <font color="white">   @Html.DisplayNameFor(model => model.EmployeeWorkingHour) </font>
+                </dt>
+
+                <dd>
+                    <font color="white">  @Html.DisplayFor(model => model.EmployeeWorkingHour) </font>
+                </dd>
+
+                <dt>
+                    <font color="white">  @Html.DisplayNameFor(model => model.EmployeeSalary) </font>
+                </dt>
+
+                <dd>
+                    <font color="white">   @Html.DisplayFor(model => model.EmployeeSalary) </font>
+                </dd>
+
+                <dt>
+                    <font color="white">  @Html.DisplayNameFor(model => model.EmployeeJoiningDate) </font>
+                </dt>
+
+                <dd>
+                    <font color="white"> @Html.DisplayFor(model => model.EmployeeJoiningDate) </font>
+                </dd>
+
+                <dt>
+                    <font color="white">  @Html.DisplayNameFor(model => model.EmployeeResigningDate) </font>
+                </dt>
+
+                <dd>
+                    <font color="white">   @Html.DisplayFor(model => model.EmployeeResigningDate) </font>
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+           
+                @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+                  @Html.ActionLink("Back to List", "Index") 
+
+</p>
+</body>

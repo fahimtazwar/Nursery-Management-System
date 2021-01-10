@@ -1,0 +1,90 @@
+﻿<body style="background-color:black;">
+
+
+    @model IEnumerable<Nursery.Models.employee>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <font color="white">
+        <h2>Employee Table</h2>
+    </font>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+
+            <th>
+                <font color="white">      @Html.DisplayNameFor(model => model.EmployeeID) </font>
+            </th>
+            <th>
+                <font color="white">    @Html.DisplayNameFor(model => model.EmployeeName) </font>
+            </th>
+            <th>
+                <font color="white">     @Html.DisplayNameFor(model => model.EmployeeAddress) </font>
+            </th>
+            <th> 
+                <font color="white">     @Html.DisplayNameFor(model => model.EmployeePhone) </font>
+            </th>
+            <th>
+                <font color="white">    @Html.DisplayNameFor(model => model.EmployeeWorkingHour) </font>
+            </th>
+            <th>
+                <font color="white">    @Html.DisplayNameFor(model => model.EmployeeSalary) </font>
+            </th>
+            <th>
+                <font color="white">     @Html.DisplayNameFor(model => model.EmployeeJoiningDate) </font>
+            </th>
+            <th>
+                <font color="white">    @Html.DisplayNameFor(model => model.EmployeeResigningDate) </font>
+            </th>
+            <th></th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <font color="white">       @Html.DisplayFor(modelItem => item.EmployeeID) </font>
+                </td>
+                <td>
+                    <font color="white">      @Html.DisplayFor(modelItem => item.EmployeeName) </font>
+                </td>
+                <td>
+                    <font color="white">     @Html.DisplayFor(modelItem => item.EmployeeAddress) </font>
+                </td>
+                <td>
+                    <font color="white">     @Html.DisplayFor(modelItem => item.EmployeePhone) </font>
+                </td>
+                <td>
+                    <font color="white">     @Html.DisplayFor(modelItem => item.EmployeeWorkingHour) </font>
+                </td>
+                <td>
+                    <font color="white">     @Html.DisplayFor(modelItem => item.EmployeeSalary) </font>
+                </td>
+                <td>
+                    <font color="white">      @Html.DisplayFor(modelItem => item.EmployeeJoiningDate) </font>
+                </td>
+                <td>
+                    <font color="white">      @Html.DisplayFor(modelItem => item.EmployeeResigningDate) </font>
+                </td>
+                <td>
+
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }) |
+
+
+                    @Html.ActionLink("Details", "Details", new { id = item.EmployeeID }) |
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

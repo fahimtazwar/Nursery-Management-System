@@ -1,0 +1,69 @@
+﻿
+<body style="background-color:black;">
+    @model IEnumerable<Nursery.Models.plant>
+
+    @{
+        ViewBag.Title = "Plant Table";
+    }
+
+    <font color="white">
+        <h2>Plant</h2>
+        </font>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    <font color="white">     @Html.DisplayNameFor(model => model.plantID) </font>
+                </th>
+                <th>
+                    <font color="white">     @Html.DisplayNameFor(model => model.plantName) </font>
+                </th>
+                <th>
+                    <font color="white">     @Html.DisplayNameFor(model => model.ScientificName) </font>
+                </th>
+                <th>
+                    <font color="white">     @Html.DisplayNameFor(model => model.plantAge) </font>
+                </th>
+                <th>
+                    <font color="white">     @Html.DisplayNameFor(model => model.plantPrice) </font>
+                </th>
+                <th>
+                    <font color="white">    @Html.DisplayNameFor(model => model.plantPicture) </font>
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <font color="white">     @Html.DisplayFor(modelItem => item.plantID) </font>
+                    </td>
+                    <td>
+                        <font color="white">     @Html.DisplayFor(modelItem => item.plantName) </font>
+                    </td>
+                    <td>
+                        <font color="white">     @Html.DisplayFor(modelItem => item.ScientificName) </font>
+                    </td>
+                    <td>
+                        <font color="white">     @Html.DisplayFor(modelItem => item.plantAge) </font>
+                    </td>
+                    <td>
+                        <font color="white">   @Html.DisplayFor(modelItem => item.plantPrice) </font>
+                    </td>
+                    <td>
+                        <font color="white">   @Html.DisplayFor(modelItem => item.plantPicture) </font>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.plantID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.plantID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.plantID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+</body>

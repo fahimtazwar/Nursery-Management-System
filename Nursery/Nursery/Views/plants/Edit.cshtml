@@ -1,0 +1,80 @@
+﻿<body background="../../images/inser_supp_emp.png">
+
+    @model Nursery.Models.plant
+
+    @{
+        ViewBag.Title = "Edit";
+    }
+
+    <font color="white">
+        <h2>Edit</h2>
+        </font>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+               
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.plantID)
+
+                <div class="form-group">
+                    <font color="white">
+                        @Html.LabelFor(model => model.plantName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </font>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.plantName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.plantName, "", new { @class = "text-danger" })
+                        </div>
+</div>
+
+                <div class="form-group">
+                    <font color="white">
+                        @Html.LabelFor(model => model.ScientificName, htmlAttributes: new { @class = "control-label col-md-2" }) </font>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ScientificName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ScientificName, "", new { @class = "text-danger" })
+                        </div>
+</div>
+
+                <div class="form-group">
+                    <font color="white">
+                        @Html.LabelFor(model => model.plantAge, htmlAttributes: new { @class = "control-label col-md-2" }) </font>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.plantAge, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.plantAge, "", new { @class = "text-danger" })
+                        </div>
+</div>
+
+                <div class="form-group">
+                    <font color="white">
+                        @Html.LabelFor(model => model.plantPrice, htmlAttributes: new { @class = "control-label col-md-2" }) </font>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.plantPrice, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.plantPrice, "", new { @class = "text-danger" })
+                        </div>
+</div>
+
+                <div class="form-group">
+                    <font color="white">
+                        @Html.LabelFor(model => model.plantPicture, htmlAttributes: new { @class = "control-label col-md-2" }) </font>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.plantPicture, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.plantPicture, "", new { @class = "text-danger" })
+                        </div>
+</div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+</body>

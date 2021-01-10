@@ -1,0 +1,63 @@
+﻿<body style="background-color:black;">
+
+@model IEnumerable<Nursery.Models.supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <font color="white">
+        <h2>Supplier Table</h2>
+        </font>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    <font color="white">      @Html.DisplayNameFor(model => model.SupplierID) </font>
+                </th>
+                <th>
+                    <font color="white">   @Html.DisplayNameFor(model => model.SupplierName) </font>
+                </th>
+                <th>
+                    <font color="white">   @Html.DisplayNameFor(model => model.SupplierAddress) </font>
+                </th>
+                <th>
+                    <font color="white">  @Html.DisplayNameFor(model => model.SupplierPhone) </font>
+                </th>
+                <th>
+                    <font color="white">  @Html.DisplayNameFor(model => model.SupplierEmail) </font>
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <font color="white">     @Html.DisplayFor(modelItem => item.SupplierID) </font>
+                    </td>
+                    <td> 
+                        <font color="white">   @Html.DisplayFor(modelItem => item.SupplierName) </font>
+                    </td>
+                    <td>
+                        <font color="white">    @Html.DisplayFor(modelItem => item.SupplierAddress) </font>
+                    </td>
+                    <td>
+                        <font color="white">   @Html.DisplayFor(modelItem => item.SupplierPhone) </font>
+                    </td>
+                    <td>
+                        <font color="white">   @Html.DisplayFor(modelItem => item.SupplierEmail) </font>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SupplierID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.SupplierID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SupplierID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+</body>

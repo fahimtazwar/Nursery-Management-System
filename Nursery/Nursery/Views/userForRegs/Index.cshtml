@@ -1,0 +1,58 @@
+﻿<body style="background-color:black;">
+
+    @model IEnumerable<Nursery.Models.userForReg>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <font color="white">
+        <h2>Registered Customer Table</h2>
+        </font>
+
+        <table class="table">
+            <tr>
+                <th>
+                    <font color="white">    @Html.DisplayNameFor(model => model.UserID) </font>
+                </th>
+                <th>
+                    <font color="white">    @Html.DisplayNameFor(model => model.Name) </font>
+                </th>
+                <th>
+                    <font color="white">    @Html.DisplayNameFor(model => model.Address) </font>
+                </th>
+                <th>
+                    <font color="white">   @Html.DisplayNameFor(model => model.Phone) </font>
+                </th>
+                <th>
+                    <font color="white">   @Html.DisplayNameFor(model => model.Email) </font>
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <font color="white">     @Html.DisplayFor(modelItem => item.UserID) </font>
+                    </td>
+                    <td>
+                        <font color="white">   @Html.DisplayFor(modelItem => item.Name) </font>
+                    </td>
+                    <td>
+                        <font color="white">   @Html.DisplayFor(modelItem => item.Address) </font>
+                    </td>
+                    <td>
+                        <font color="white">   @Html.DisplayFor(modelItem => item.Phone) </font>
+                    </td>
+                    <td>
+                        <font color="white">    @Html.DisplayFor(modelItem => item.Email) </font>
+                    </td>
+
+
+                </tr>
+            }
+
+        </table>
+</body>

@@ -1,0 +1,114 @@
+﻿<body background="../../images/inser_supp_emp.png">
+
+    @model Nursery.Models.employee
+
+    @{
+        ViewBag.Title = "Edit";
+    }
+
+    <font color="white">
+        <h2>Edit</h2>
+        </font>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4></h4>
+                <hr />
+               
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.EmployeeID)
+                   
+
+                    <div class="form-group">
+                        <font color="white">
+                            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </font>
+
+                            <div class="col-md-10">
+
+                                @Html.EditorFor(model => model.EmployeeName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+
+                            </div>
+</div>
+
+                    <div class="form-group">
+                        <font color="white">
+                            @Html.LabelFor(model => model.EmployeeAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </font>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EmployeeAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeAddress, "", new { @class = "text-danger" })
+                            </div>
+</div>
+
+                    <div class="form-group">
+                        <font color="white">
+                            @Html.LabelFor(model => model.EmployeePhone, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </font>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EmployeePhone, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmployeePhone, "", new { @class = "text-danger" })
+                            </div>
+</div>
+
+                    <div class="form-group">
+                        <font color="white">
+                            @Html.LabelFor(model => model.EmployeeWorkingHour, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </font>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EmployeeWorkingHour, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeWorkingHour, "", new { @class = "text-danger" })
+                            </div>
+</div>
+
+                    <div class="form-group">
+                        <font color="white">
+                            @Html.LabelFor(model => model.EmployeeSalary, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </font>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EmployeeSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeSalary, "", new { @class = "text-danger" })
+                            </div>
+</div>
+
+                    <div class="form-group">
+                        <font color="white">
+                            @Html.LabelFor(model => model.EmployeeJoiningDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </font>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EmployeeJoiningDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeJoiningDate, "", new { @class = "text-danger" })
+                            </div>
+</div>
+
+                    <div class="form-group">
+                        <font color="white">
+                            @Html.LabelFor(model => model.EmployeeResigningDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </font>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EmployeeResigningDate, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeResigningDate, "", new { @class = "text-danger" })
+                            </div>
+</div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>
+</div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+</body>

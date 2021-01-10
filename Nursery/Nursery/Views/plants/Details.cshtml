@@ -1,0 +1,63 @@
+﻿<body background="../../images/inser_supp_emp.png">
+
+    @model Nursery.Models.plant
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <font color="white">
+        <h2>Details</h2>
+        </font>
+
+        <div>
+            
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    <font color="white">   @Html.DisplayNameFor(model => model.plantName) </font>
+</dt>
+
+                <dd>
+                    <font color="white">   @Html.DisplayFor(model => model.plantName) </font>
+</dd>
+
+                <dt>
+                    <font color="white">   @Html.DisplayNameFor(model => model.ScientificName) </font>
+</dt>
+
+                <dd>
+                    <font color="white">     @Html.DisplayFor(model => model.ScientificName) </font>
+</dd>
+
+                <dt>
+                    <font color="white"> @Html.DisplayNameFor(model => model.plantAge) </font>
+</dt>
+
+                <dd>
+                    <font color="white">     @Html.DisplayFor(model => model.plantAge) </font>
+</dd>
+
+                <dt>
+                    <font color="white">     @Html.DisplayNameFor(model => model.plantPrice) </font>
+</dt>
+
+                <dd>
+                    <font color="white">       @Html.DisplayFor(model => model.plantPrice) </font>
+</dd>
+
+                <dt>
+                    <font color="white">   @Html.DisplayNameFor(model => model.plantPicture) </font>
+</dt>
+
+                <dd>
+                    <font color="white">   @Html.DisplayFor(model => model.plantPicture) </font>
+</dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.plantID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+</body>
